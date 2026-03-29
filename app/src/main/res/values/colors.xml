@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary">#1A237E</color>
+    <color name="primary_dark">#0D1457</color>
+    <color name="primary_light">#3949AB</color>
+    <color name="secondary">#00BCD4</color>
+    <color name="secondary_dark">#0097A7</color>
+    <color name="accent">#FF6F00</color>
+
+    <!-- Background Colors -->
+    <color name="background">#F5F7FA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#EEF0F8</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="success">#22C55E</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+    <color name="info">#3B82F6</color>
+
+    <!-- Budget Progress Colors -->
+    <color name="budget_safe">#22C55E</color>
+    <color name="budget_warning">#F59E0B</color>
+    <color name="budget_danger">#EF4444</color>
+
+    <!-- Chart Colors -->
+    <color name="chart_1">#FF6B6B</color>
+    <color name="chart_2">#4ECDC4</color>
+    <color name="chart_3">#45B7D1</color>
+    <color name="chart_4">#F7DC6F</color>
+    <color name="chart_5">#BB8FCE</color>
+    <color name="chart_6">#F0B27A</color>
+    <color name="chart_7">#82E0AA</color>
+    <color name="chart_8">#85C1E9</color>
+
+    <!-- Misc -->
+    <color name="divider">#E5E7EB</color>
+    <color name="ripple">#1A1A237E</color>
+    <color name="card_shadow">#1A000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Bottom Nav -->
+    <color name="bottom_nav_selected">#1A237E</color>
+    <color name="bottom_nav_unselected">#9CA3AF</color>
+</resources>

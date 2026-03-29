@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">BudgetBuddy</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_transactions">Transactions</string>
+    <string name="nav_budget">Budget</string>
+    <string name="nav_reports">Reports</string>
+
+    <!-- Common -->
+    <string name="add_expense">Add Expense</string>
+    <string name="edit_expense">Edit Expense</string>
+    <string name="delete_expense">Delete Expense</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="title">Title</string>
+    <string name="amount">Amount (₹)</string>
+    <string name="category">Category</string>
+    <string name="date">Date</string>
+    <string name="note">Note (optional)</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="recurring">Recurring</string>
+    <string name="period">Period</string>
+
+    <!-- Dashboard -->
+    <string name="total_expenses">Total Expenses</string>
+    <string name="total_budget">Total Budget</string>
+    <string name="remaining">Remaining</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="view_all">View All</string>
+    <string name="no_expenses_this_month">No expenses this month</string>
+
+    <!-- Budget -->
+    <string name="set_budget">Set Monthly Budget</string>
+    <string name="monthly_limit">Monthly Limit</string>
+    <string name="spent">Spent</string>
+    <string name="budget_status">Budget Status</string>
+    <string name="over_budget">Over Budget!</string>
+    <string name="within_budget">Within Budget</string>
+    <string name="no_budgets">No budgets set for this month</string>
+    <string name="add_budget">Add Budget</string>
+
+    <!-- Reports -->
+    <string name="spending_by_category">Spending by Category</string>
+    <string name="daily_spending">Daily Spending</string>
+    <string name="monthly_comparison">Monthly Comparison</string>
+    <string name="export_csv">Export CSV</string>
+    <string name="no_data">No data available</string>
+
+    <!-- Splash -->
+    <string name="app_tagline">Track Every Rupee. Save Every Day.</string>
+</resources>

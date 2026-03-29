@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- BudgetBuddy logo — centred on screen -->
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="60dp"
+        android:src="@drawable/budget_buddy_logo"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:contentDescription="BudgetBuddy" />
+
+    <!-- Gold spinner above the Powered by label -->
+    <ProgressBar
+        android:id="@+id/splash_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#C9A84C"
+        android:layout_above="@id/tv_powered_by_splash"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Powered by Anil — gold pill pinned to bottom -->
+    <TextView
+        android:id="@+id/tv_powered_by_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="⚡ Powered by Anil"
+        android:textColor="#C9A84C"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-light"
+        android:letterSpacing="0.06"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/powered_by_bg" />
+
+</RelativeLayout>

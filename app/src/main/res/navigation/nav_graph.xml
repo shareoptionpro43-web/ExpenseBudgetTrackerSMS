@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.home.expensetracker.ui.fragments.DashboardFragment"
+        android:label="Dashboard">
+        <action
+            android:id="@+id/action_dashboard_to_transactions"
+            app:destination="@id/transactionsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transactionsFragment"
+        android:name="com.home.expensetracker.ui.fragments.TransactionsFragment"
+        android:label="Transactions" />
+
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="com.home.expensetracker.ui.fragments.BudgetFragment"
+        android:label="Budget" />
+
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.home.expensetracker.ui.fragments.ReportsFragment"
+        android:label="Reports" />
+
+</navigation>
