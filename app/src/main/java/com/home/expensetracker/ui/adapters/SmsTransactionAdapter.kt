@@ -21,7 +21,6 @@ class SmsTransactionAdapter(
                 b: SmsImportViewModel.SmsTransaction
             ) = a.parsed.upiRef == b.parsed.upiRef &&
                 a.parsed.timestampMs == b.parsed.timestampMs
-
             override fun areContentsTheSame(
                 a: SmsImportViewModel.SmsTransaction,
                 b: SmsImportViewModel.SmsTransaction
@@ -38,17 +37,22 @@ class SmsTransactionAdapter(
             b.tvAmount.text   = CurrencyUtils.format(item.parsed.amount)
             b.tvCategory.text = item.category
             b.tvDate.text     = DateUtils.formatDate(item.parsed.timestampMs)
-            b.tvRef.text      = if (item.parsed.upiRef.isNotEmpty())
-                "Ref: ${item.parsed.upiRef}" else "UPI Payment"
+
+            // Show provider name + emoji as the ref line
+            val refText = buildString {
+                append("${item.provider.emoji} ${item.provider.displayName}")
+                if (item.parsed.upiRef.isNotEmpty()) {
+                    append(" · Ref: ${item.parsed.upiRef.take(12)}")
+                }
+            }
+            b.tvRef.text = refText
 
             b.cbSelect.setOnCheckedChangeListener(null)
             b.cbSelect.isChecked = item.isSelected
-
             b.cbSelect.setOnCheckedChangeListener { _, checked ->
                 item.isSelected = checked
                 onCheckedChange(adapterPosition, checked)
             }
-
             b.root.setOnClickListener {
                 b.cbSelect.isChecked = !b.cbSelect.isChecked
             }
@@ -56,11 +60,7 @@ class SmsTransactionAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH =
-        VH(
-            ItemSmsTransactionBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false
-            )
-        )
+        VH(ItemSmsTransactionBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     override fun onBindViewHolder(holder: VH, position: Int) =
         holder.bind(getItem(position))
