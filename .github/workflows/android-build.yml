@@ -156,6 +156,9 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
+    permissions:
+      contents: write        # ← ADD THIS LINE
+      
     steps:
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
