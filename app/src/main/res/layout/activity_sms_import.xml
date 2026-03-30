@@ -10,7 +10,8 @@
     <!-- Toolbar -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -20,80 +21,124 @@
             app:navigationIconTint="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- IDLE STATE -->
-    <LinearLayout
+    <!-- ══════════════════════ IDLE STATE ══════════════════════ -->
+    <ScrollView
         android:id="@+id/layout_idle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="32dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📲"
-            android:textSize="72sp"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Import UPI Expenses"
-            android:textColor="@color/text_primary"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginTop="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Scan SMS from GPay, PhonePe, Paytm, BHIM and all major banks. Filter by provider and month."
-            android:textColor="@color/text_secondary"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:layout_marginTop="8dp"
-            android:lineSpacingMultiplier="1.4" />
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/outlined_box_bg"
-            android:padding="16dp">
+            android:gravity="center"
+            android:padding="28dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🔒 Privacy Notice"
+                android:text="📲"
+                android:textSize="80sp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Import UPI Expenses"
                 android:textColor="@color/text_primary"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SMS messages are read only on your device. Nothing is sent to any server."
+                android:text="Auto-detect transactions from GPay, PhonePe, Paytm, BHIM and all major banks. Filter by provider and month."
                 android:textColor="@color/text_secondary"
-                android:textSize="13sp"
-                android:layout_marginTop="4dp" />
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:lineSpacingMultiplier="1.5" />
+
+            <!-- Supported providers row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/outlined_box_bg"
+                android:padding="16dp"
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supported Providers"
+                    android:textColor="@color/text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔵 Google Pay   🟣 PhonePe   🔷 Paytm   🇮🇳 BHIM"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏦 HDFC · SBI · ICICI · Axis · Kotak · PNB · Canara and more"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Privacy note -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/outlined_box_bg"
+                android:padding="14dp"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔒"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SMS messages are read only on your device. Nothing is sent to any server."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_scan"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="28dp"
+                android:text="Scan SMS Messages"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primary"
+                app:cornerRadius="14dp"
+                app:icon="@android:drawable/ic_menu_search"
+                app:iconTint="@color/white"
+                app:iconPadding="8dp" />
         </LinearLayout>
+    </ScrollView>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_scan"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="32dp"
-            android:text="Scan SMS Messages"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/primary"
-            app:cornerRadius="16dp" />
-    </LinearLayout>
-
-    <!-- LOADING STATE -->
+    <!-- ══════════════════════ LOADING STATE ══════════════════════ -->
     <LinearLayout
         android:id="@+id/layout_loading"
         android:layout_width="match_parent"
@@ -103,8 +148,8 @@
         android:visibility="gone">
 
         <ProgressBar
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:indeterminateTint="@color/primary" />
 
         <TextView
@@ -113,11 +158,11 @@
             android:layout_height="wrap_content"
             android:text="Scanning SMS messages…"
             android:textColor="@color/text_secondary"
-            android:textSize="15sp"
-            android:layout_marginTop="16dp" />
+            android:textSize="16sp"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 
-    <!-- READY STATE: filters + list -->
+    <!-- ══════════════════════ READY STATE ══════════════════════ -->
     <LinearLayout
         android:id="@+id/layout_ready"
         android:layout_width="match_parent"
@@ -125,13 +170,13 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <!-- ── Month selector ── -->
+        <!-- Month selector card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="6dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/surface">
@@ -141,22 +186,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:padding="12dp">
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📅"
-                    android:textSize="18sp"
-                    android:layout_marginEnd="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Month:"
+                    android:text="📅  Month: "
                     android:textColor="@color/text_secondary"
-                    android:textSize="13sp"
-                    android:layout_marginEnd="8dp" />
+                    android:textSize="13sp" />
 
                 <Spinner
                     android:id="@+id/spinner_month"
@@ -168,11 +206,11 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ── UPI Provider chips ── -->
+        <!-- Provider chips card -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="6dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
@@ -183,15 +221,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="10dp"
-                android:paddingBottom="8dp">
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Filter by UPI Provider"
+                    android:text="FILTER BY UPI PROVIDER"
                     android:textColor="@color/text_secondary"
                     android:textSize="11sp"
-                    android:letterSpacing="0.06"
+                    android:letterSpacing="0.07"
                     android:paddingHorizontal="14dp"
                     android:layout_marginBottom="8dp" />
 
@@ -206,63 +244,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:singleSelection="true"
-                        app:selectionRequired="true">
-
-                        <!-- Chips added dynamically in Activity -->
-                    </com.google.android.material.chip.ChipGroup>
+                        app:selectionRequired="true" />
                 </HorizontalScrollView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ── Summary bar + action buttons ── -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="12dp"
-            android:paddingBottom="6dp">
-
-            <TextView
-                android:id="@+id/tv_summary"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/text_secondary"
-                android:textSize="13sp"
-                android:text="0 transactions" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_select_all"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Select All"
-                android:textSize="12sp"
-                android:layout_marginEnd="6dp"
-                app:backgroundTint="@color/surface_variant"
-                android:textColor="@color/primary"
-                app:cornerRadius="20dp"
-                app:strokeColor="@color/primary"
-                app:strokeWidth="1dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_import"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Import"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/primary"
-                app:cornerRadius="20dp" />
-        </LinearLayout>
-
-        <!-- ── Transactions list ── -->
+        <!-- Transaction list (scrollable, takes remaining height) -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_transactions"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="80dp"
             android:clipToPadding="false" />
 
         <TextView
@@ -270,16 +264,74 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="No transactions found for this filter.\nTry a different provider or month."
+            android:text="No transactions found.\nTry a different provider or month."
             android:textColor="@color/text_hint"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:gravity="center"
-            android:padding="32dp"
+            android:padding="40dp"
             android:visibility="gone" />
 
+        <!-- ── Fixed bottom action bar — always fully visible ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/surface"
+            android:elevation="8dp">
+
+            <!-- Summary line -->
+            <TextView
+                android:id="@+id/tv_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0 transactions found"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="16dp" />
+
+            <!-- Buttons row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_select_all"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Select All"
+                    android:textSize="13sp"
+                    android:textColor="@color/primary"
+                    app:backgroundTint="#EEF0FF"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_import"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="2"
+                    android:text="Import Expenses"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primary"
+                    app:cornerRadius="12dp"
+                    app:icon="@android:drawable/ic_input_add"
+                    app:iconTint="@color/white"
+                    app:iconPadding="6dp" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- IMPORTING STATE -->
+    <!-- ══════════════════════ IMPORTING STATE ══════════════════════ -->
     <LinearLayout
         android:id="@+id/layout_importing"
         android:layout_width="match_parent"
@@ -289,8 +341,8 @@
         android:visibility="gone">
 
         <ProgressBar
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:indeterminateTint="@color/primary" />
 
         <TextView
@@ -298,11 +350,11 @@
             android:layout_height="wrap_content"
             android:text="Importing expenses…"
             android:textColor="@color/text_secondary"
-            android:textSize="15sp"
-            android:layout_marginTop="16dp" />
+            android:textSize="16sp"
+            android:layout_marginTop="20dp" />
     </LinearLayout>
 
-    <!-- DONE STATE -->
+    <!-- ══════════════════════ DONE STATE ══════════════════════ -->
     <LinearLayout
         android:id="@+id/layout_done"
         android:layout_width="match_parent"
@@ -316,7 +368,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="✅"
-            android:textSize="72sp"
+            android:textSize="80sp"
             android:gravity="center" />
 
         <TextView
@@ -325,29 +377,43 @@
             android:layout_height="wrap_content"
             android:text="Import complete!"
             android:textColor="@color/text_primary"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_done_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expenses added to your tracker"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
             android:gravity="center" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_done"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="36dp"
             android:text="Go to Dashboard"
+            android:textSize="15sp"
             app:backgroundTint="@color/primary"
-            app:cornerRadius="12dp" />
+            app:cornerRadius="14dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_scan_again"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:text="Scan Again"
-            app:backgroundTint="@color/surface_variant"
+            android:textSize="15sp"
             android:textColor="@color/primary"
-            app:cornerRadius="12dp" />
+            app:backgroundTint="#EEF0FF"
+            app:cornerRadius="14dp"
+            app:strokeColor="@color/primary"
+            app:strokeWidth="1dp" />
     </LinearLayout>
 
 </LinearLayout>
